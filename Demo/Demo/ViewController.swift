@@ -13,7 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       //test print(UInt32Value([Status.connected,Status.connected,Status.connecting,Status.connecting,Status.disconnect]))
+//       test
+        print(UInt32Value([Status.connected,Status.connected,Status.connecting,Status.connecting,Status.disconnect]))
     }
 
     override func didReceiveMemoryWarning() {
