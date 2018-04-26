@@ -8,12 +8,43 @@
 
 import UIKit
 
+let DefaultAPIScheduleQueue = DispatchQueue(label: "com.gy.APIScheduleQueue", attributes: [])
+
+
 class ViewController: UIViewController {
 
+    open var apiScheduleQueue: DispatchQueue {
+        get {
+            return DefaultAPIScheduleQueue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//       test
+       
+       
+        Sync.customQueue(apiScheduleQueue, task:  DispatchWorkItem {
+            
+            print(5)
+            
+            self.apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
+                print(15)
+            })
+            
+            print(6)
+        })
+        
+        Sync.customQueue(apiScheduleQueue, task:  DispatchWorkItem {
+            
+            print(7)
+            
+            self.apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
+                print(16)
+            })
+            
+            print(8)
+        })
+        
         print(UInt32Value([Status.connected,Status.connected,Status.connecting,Status.connecting,Status.disconnect]))
     }
 

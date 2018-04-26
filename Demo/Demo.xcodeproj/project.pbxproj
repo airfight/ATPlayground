@@ -14,6 +14,7 @@
 		1957554B2090685F007C88B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 195755492090685F007C88B6 /* LaunchScreen.storyboard */; };
 		1957555620906860007C88B6 /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1957555520906860007C88B6 /* DemoTests.swift */; };
 		1957556120906860007C88B6 /* DemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1957556020906860007C88B6 /* DemoUITests.swift */; };
+		1965631B2091D35D00361973 /* Sync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1965631A2091D35D00361973 /* Sync.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		1957555C20906860007C88B6 /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1957556020906860007C88B6 /* DemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoUITests.swift; sourceTree = "<group>"; };
 		1957556220906860007C88B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1965631A2091D35D00361973 /* Sync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sync.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				195755402090685F007C88B6 /* AppDelegate.swift */,
 				195755422090685F007C88B6 /* ViewController.swift */,
+				1965631A2091D35D00361973 /* Sync.swift */,
 				195755442090685F007C88B6 /* Main.storyboard */,
 				195755472090685F007C88B6 /* Assets.xcassets */,
 				195755492090685F007C88B6 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				195755432090685F007C88B6 /* ViewController.swift in Sources */,
+				1965631B2091D35D00361973 /* Sync.swift in Sources */,
 				195755412090685F007C88B6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
