@@ -22,30 +22,59 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       
-        Sync.customQueue(apiScheduleQueue, task:  DispatchWorkItem {
-            
-            print(5)
-            
-            self.apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
-                print(15)
-            })
+        
+        apiScheduleQueue.sync {
             
             print(6)
-        })
-        
-        Sync.customQueue(apiScheduleQueue, task:  DispatchWorkItem {
-            
-            print(7)
-            
-            self.apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
-                print(16)
+            apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+                print(5)
             })
+            sleep(3)
             
-            print(8)
-        })
+        }
         
-        print(UInt32Value([Status.connected,Status.connected,Status.connecting,Status.connecting,Status.disconnect]))
+        apiScheduleQueue.sync {
+            
+            print(66)
+            apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+                print(55)
+            })
+            sleep(3)
+            
+        }
+        
+        apiScheduleQueue.sync {
+            print(666)
+            apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
+                print(555)
+            })
+            sleep(3)
+        }
+
+       
+//        Sync.customQueue(apiScheduleQueue, task:  DispatchWorkItem {
+//
+//            print(5)
+//
+//            self.apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
+//                print(15)
+//            })
+//
+//            print(6)
+//        })
+//
+//        Sync.customQueue(apiScheduleQueue, task:  DispatchWorkItem {
+//
+//            print(7)
+//
+//            self.apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 5, execute: {
+//                print(16)
+//            })
+//
+//            print(8)
+//        })
+//
+//        print(UInt32Value([Status.connected,Status.connected,Status.connecting,Status.connecting,Status.disconnect]))
     }
 
     override func didReceiveMemoryWarning() {
