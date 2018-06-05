@@ -19,15 +19,20 @@ class ViewController: UIViewController {
         }
     }
     
+    var stepSize = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+//        increment(&stepSize)
         
         apiScheduleQueue.sync {
             
             print(6)
+            print(Thread.current)
             apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
                 print(5)
+                print(Thread.current)
             })
             sleep(3)
             
@@ -38,6 +43,8 @@ class ViewController: UIViewController {
             print(66)
             apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
                 print(55)
+                print(Thread.current)
+
             })
             sleep(3)
             
@@ -45,8 +52,11 @@ class ViewController: UIViewController {
         
         apiScheduleQueue.sync {
             print(666)
+            print(Thread.current)
             apiScheduleQueue.asyncAfter(deadline: DispatchTime.now() + 3, execute: {
                 print(555)
+                print(Thread.current)
+
             })
             sleep(3)
         }
@@ -96,6 +106,15 @@ class ViewController: UIViewController {
             value |= statusItem.rawValue
         }
         return value
+    }
+    
+    
+    /// 内存访问冲突
+    ///
+    /// - Parameter number: <#number description#>
+    func increment(_ number: inout Int) {
+        
+        number += stepSize
     }
 
 }
